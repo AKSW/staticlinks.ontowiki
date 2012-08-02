@@ -11,7 +11,7 @@
  * @copyright  Copyright (c) 2012, {@link http://aksw.org AKSW}
  * @license    http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
  */
-class StaticLinksModule extends OntoWiki_Module
+class StaticlinksModule extends OntoWiki_Module
 {
     protected $session = null;
 
