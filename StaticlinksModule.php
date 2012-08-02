@@ -20,7 +20,8 @@ class StaticlinksModule extends OntoWiki_Module
 	}
 
     public function getTitle() {
-        return "Links";
+        $title = $this->_privateConfig->toArray(); 
+        return $title ['module']['title'];
     }
     
     public function shouldShow(){
@@ -32,8 +33,11 @@ class StaticlinksModule extends OntoWiki_Module
      */
     public function getContents() {
 
-		$this->view->basePath = $this->_config->staticUrlBase . "extensions/cubeviz/";
-				
+		$this->view->basePath = $this->_config->staticUrlBase . "extensions/staticlinks/";
+        
+        $this->view->links = $this->_privateConfig->toArray(); 
+        $this->view->links = $this->view->links ['links'];
+        
         return $this->render('static/templates/StaticLinksModule');
     }
 

@@ -1,5 +1,16 @@
 <style type="text/css">
-    @import url("<?php echo $this->basePath; ?>static/css/main.css");
+    @import url("<?php echo $this->basePath; ?>static/css/base.css");
 </style>
 
-<div id="staticLinksModuleContainer">foobar!</div>
+<div id="staticLinksModuleContainer">
+    <ul>
+        <?php foreach ($this->links as $link) { ?> 
+        
+            <li>
+                <a href="<?php echo $link ['url']; ?>" target="<?php echo $link ['target']; ?>" title="<?php echo $link ['title']; ?>">
+                    <?php echo $link ['label']; ?></a>
+            </li>
+        
+        <?php } ?> 
+    </ul>
+</div>
